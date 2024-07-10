@@ -300,12 +300,8 @@ public class Server {
             Path currentPath = Paths.get(currentDir);
             Path parentPath = currentPath.getParent();
             if (parentPath != null) {
-                if (parentPath.startsWith(UPLOAD_FOLDER)) {
-                    out.writeObject("Already at root directory or invalid move");
-                } else {
                     currentDir = parentPath.toString();
                     out.writeObject("Moved back to: " + currentDir);
-                }
             } else {
                 out.writeObject("Already at root directory or invalid move");
             }
