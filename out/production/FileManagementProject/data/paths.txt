@@ -1,0 +1,3 @@
+res\server_files\truong\emotion
+res\server_files\truong\emotion\sadness.txt
+res\server_files\truong\emotion\test.txt

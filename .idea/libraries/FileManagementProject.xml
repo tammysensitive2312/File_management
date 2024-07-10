@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="FileManagementProject">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/FileManagementProject.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
