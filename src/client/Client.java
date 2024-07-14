@@ -5,8 +5,6 @@ import utils.User;
 import java.io.*;
 import java.net.Socket;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
@@ -230,7 +228,7 @@ public class Client {
         if ("Directory containing content. Continue? Y/n".equals(serverResponse)) {
             String response = scanner.nextLine();
             out.writeObject(response);
-            System.out.println((String) in.readObject()); // Nhận phản hồi cuối cùng từ server
+            System.out.println((String) in.readObject());
         } else {
             System.out.println(serverResponse);
         }
@@ -240,9 +238,6 @@ public class Client {
         System.out.println("Enter the name of the directory to move to:");
         String dirName = scanner.nextLine();
         out.writeObject(dirName);
-
-//        String response = (String) in.readObject();
-//        System.out.println(response);
 
         String newCurrentDir = (String) in.readObject();
         System.out.println("Current directory: " + newCurrentDir);

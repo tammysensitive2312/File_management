@@ -299,14 +299,21 @@ public class Server {
         private void goBackToParentDirectory() throws IOException {
             Path currentPath = Paths.get(currentDir);
             Path parentPath = currentPath.getParent();
+            Path serverFilesPath = Paths.get("res/server_files");
+
             if (parentPath != null) {
+                if (parentPath.equals(serverFilesPath)) {
+                    out.writeObject("Already at root directory or invalid move");
+                } else {
                     currentDir = parentPath.toString();
                     out.writeObject("Moved back to: " + currentDir);
+                }
             } else {
                 out.writeObject("Already at root directory or invalid move");
             }
             out.writeObject(currentDir);
         }
+
 
 
         private void manageFolder() throws IOException, ClassNotFoundException {
@@ -409,13 +416,14 @@ public class Server {
 
         private void deleteFile() throws IOException, ClassNotFoundException {
             String filePathStr = (String) in.readObject();
-            Path filePath = Paths.get(filePathStr);
+            Path filePath = Paths.get(currentDir + "/" + filePathStr);
 
             if (!Files.exists(filePath) || Files.isDirectory(filePath)) {
                 out.writeObject("File does not exist or is a directory.");
                 return;
             }
 
+//            Files.delete(Path.of(currentDir + "/" + filePath));
             Files.delete(filePath);
             out.writeObject("File deleted successfully.");
         }

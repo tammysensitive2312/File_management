@@ -1,3 +1,6 @@
-res\server_files\truong\lovers
-res\server_files\truong\lovers\emotion
-res\server_files\truong\lovers\joy.txt
+res\server_files\truong\emotion
+res\server_files\truong\emotion\anger
+res\server_files\truong\emotion\disgust.txt
+res\server_files\truong\emotion\joy.txt
+res\server_files\truong\emotion\new.txt
+res\server_files\truong\emotion\sadness.txt

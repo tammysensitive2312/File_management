@@ -1,0 +1,45 @@
+1. chức năng đăng nhập/ đăng ký:
+- đầu vào là các chuỗi ký tự không dấu, dùng làm dữ liệu ng dùng
+2. các chức năng chính:
++ upload_file
+- param: absolute path của file t bất kì nơi nào trong máy của bạn
+- range: file sẽ được lưu vào thư mục hiện tại ng dùng đang làm việc
++ dowload_file
+- param: tên của file ví dụ test.txt( file này sẽ là file ở trong thư mục servẻ_files và đồng cấp
+với các directory chính của user), nếu param ko hợp lệ sẽ in ra lỗi : Invalid File
+- range: file sẽ được lưu vào thư mục hiện tại ng dùng đang làm việc
++ manage_folder: (*param) : các số lưạ chọn
+- create folder: tên thư mục (muốn tạo mới trong thư mục con của con thì như các chức năng khác)
+- rename folder:
+ * param: tên thư mục cần đổi ( đổi tên thư mục con trong thư mục con cần thêm \)
+          tên thư mục mới
+          ví dụ: đổi tên truong\lovers\emotion mà đang ở truong thì param như sau:
+          * currentname : lovers\emotion
+          * newname: lovers\joy
+          nếu thiếu mất lovers trong param mới thì vị trí folder thay đổi
+ * range: tất cả thư mục con trong thư mục đang làm việc
+- delete folder:
+ * param: tên thư mục cần xóa
+ * usage: nếu thư mục xóa có chứa thư mục con sẽ hiện lên thông báo xác nhận Y/n
+          range: tất cả các thư mục con có trong thư mục hiện tại, không thể xóa được thư mục cha
+          có chứa thư mục con đang làm việc được
+          path đúng có thể như sau: lovers/emotion/joy (muốn xóa thư mục con chỉ cần thêm /directoryname
+- view list:
+ * xem các thư mục và file đang có trong thư mục hiện tại đang làm việc
+- back:
+ * no param: thoát menu hiện tại và trở về menu chính
+
+
++ manage_file
+ 1. create: param cx như folder
+ 2. rename: param cx như folder
+ 3. delete: param cx như folder
+ 4. view: absolute path của file, phạm vi truy cập là bất kỳ, chỉ cần biết alsolute path
+ E:\FileManagementProject\res\server_files\tuyen\test.txt
+ 5. copy : absolute path của file và folder đích, phạm vi truy cập là bất kỳ chỉ cần biết path
+ 6. move : như copy
+
++ move_to: * param: tên folder, tất cả các folder con trong thư mục đang làm việc,
+không thể di chuyển đến thư mục cấp cao hơn
+thư mục đang làm việc
++ back: mỗi lần chỉ di chuyển về được một folder cha trước đó
