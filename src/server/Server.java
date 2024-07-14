@@ -466,9 +466,7 @@ public class Server {
 
         private void updatePaths() throws IOException {
             List<String> paths = new ArrayList<>();
-            Files.walk(Paths.get(currentDir)).forEach(path -> {
-                paths.add(path.toString());
-            });
+            Files.walk(Paths.get(currentDir)).forEach(path -> paths.add(path.toString()));
             savePaths(paths);
         }
     }
